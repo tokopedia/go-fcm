@@ -42,8 +42,13 @@ type FcmClient struct {
 	Message FcmMsg
 }
 
+type AndroidProperty struct {
+	Priority string `json:"priority,omitempty"`
+}
+
 // FcmMsg represents fcm request message
 type FcmMsg struct {
+	Android 			  AndroidProperty 	  `json:"android"`
 	Data                  interface{}         `json:"data,omitempty"`
 	To                    string              `json:"to,omitempty"`
 	RegistrationIds       []string            `json:"registration_ids,omitempty"`
